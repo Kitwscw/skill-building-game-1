@@ -66,7 +66,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_y0h2m")
 }],
 "loop": true,
-"name": &"Player-Fall",
+"name": &"Player_Fall",
 "speed": 5.0
 }, {
 "frames": [{
@@ -92,7 +92,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rigkb")
 }],
 "loop": true,
-"name": &"Player-Idle",
+"name": &"Player_Idle",
 "speed": 3.0
 }, {
 "frames": [{
@@ -100,7 +100,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_35c3y")
 }],
 "loop": true,
-"name": &"Player-Jump",
+"name": &"Player_Jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -117,13 +117,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_l6ce8")
 }],
 "loop": true,
-"name": &"Player-Run",
+"name": &"Player_Run",
 "speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_3xo8q")
+speed = null
+jump_power = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -134,8 +136,7 @@ shape = SubResource("CapsuleShape2D_jwnxb")
 position = Vector2(0, -1)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r6h80")
-animation = &"Player-Idle"
-frame_progress = 0.528909
+animation = &"Player_Fall"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -1)

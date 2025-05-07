@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name player_controller
-@onready var animation = $Animatedsprite2d
+@onready var sprite = $AnimatedSprite2D
 #const SPEED = 150
 #const JUMP_VELOCITY = -250
 @export var speed = 10
@@ -32,5 +32,8 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_mult)
 	if direction <0:
-		animation
+		sprite.play = 
+		sprite.flip_h = true
+	elif direction>0:
+		sprite.flip_h = false
 	move_and_slide()
